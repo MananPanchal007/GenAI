@@ -1,15 +1,28 @@
-from dotenv import load_dotenv
-from openai import OpenAI
+# from dotenv import load_dotenv
+# from openai import OpenAI
 
-load_dotenv()
+# load_dotenv()
 
-client = OpenAI()
+# client = OpenAI()
 
-result = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[
-        { "role": "user", "content": "What is greator? 9.8 or 9.11" } # Zero Shot Prompting
-    ]
+# result = client.chat.completions.create(
+#     model="gpt-4o",
+#     messages=[
+#         { "role": "user", "content": "What is greator? 9.8 or 9.11" } # Zero Shot Prompting
+#     ]
+# )
+
+# print(result.choices[0].message.content)
+
+
+# *************Gemini zero shot prompting**************
+
+from google import genai
+from google.genai import types
+
+client = genai.Client(api_key='AIzaSyAqQzCytMD5ZNssHSlaPfKBm5h3TDKphTg')
+
+response = client.models.generate_content(
+    model='gemini-2.0-flash-001', contents='Why is the sky blue?'
 )
-
-print(result.choices[0].message.content)
+print(response.text)
