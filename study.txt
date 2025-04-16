@@ -1,0 +1,6 @@
+If you want to study Gen Ai by this code base, You have to follow the structure of code files as per below.
+
+basic_zeroshotprompt.py
+systemPrompt_01.py
+systemPrompt_02.py
+systemPromptAuto_03.py
